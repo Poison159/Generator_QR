@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "QRCodeGenerator",
+  "short_name": "QRCodeGenerator",
+  "version": "io.cordova.hellocordova",
+  "description": "An app to scan qrCodes and return data from bd uding guid",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html"
+}

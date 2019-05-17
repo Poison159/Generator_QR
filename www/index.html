@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes.     
+ See https://issues.apache.org/jira/browse/CB-4323 -->
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <link rel="stylesheet" type="text/css" href="js/JquerMobile/jquery.mobile-1.4.5.min.css" />
+
+    <style type="text/css" rel="stylesheet">
+        #qrcode {
+            width: 300px;
+            height: 300px;
+            margin-top: 15px;
+        }
+    </style>
+    <title>Hello World</title>
+</head>
+
+<body>
+
+    <div class="app">
+        <div data-role="page" id="QrCode">
+            <div data-role="header" data-position="fixed">  
+                <h1 style="font-family:Segoe Print">QR Code Generator</h1>
+            </div>
+            <div role="main" class="ui-content" id="home-content">
+                <input type="button" value="Generate QR Code" style="width:80%" onclick="Generate();" /><br />
+                <div id="qrcode"></div>
+                    <table id="theTable">
+                        <tr>
+                            <th>Languae</th>
+                            <th>Release Year</th>
+                        </tr>
+                        <tr>
+                            <td>Java</td>
+                            <td>1995</td>
+                        </tr>
+                        <tr>
+                            <td>Pascal</td>
+                            <td>1970</td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        </br>
+        </br>
+    <script type="text/javascript">
+
+        function makeGuid(){
+            return (((1 + Math.random()) * 0x10000 ) | 0 ).toString(16).subString(1);            
+        }
+        function makeAjaxCall(){
+            $.ajax({
+<<<<<<< HEAD
+                url: "http://localhost:62447/api/meals/2",
+=======
+                url: "http://localhost:62447/api/values/2",
+>>>>>>> 292bbe54221c0f9dce632809e59af1a1f07b823a
+                method: "GET",
+                async:false,
+                success: function (result) {
+                    return result;
+                },
+                failure: function () {
+                    return "failed";
+                }
+            });
+        }
+
+        function S4() {
+            return (((1+Math.random())*0x10000)|0).toString(16).substring(1); 
+        }
+        
+    function populateTable(data)
+    {
+        $('#theTable tr').not(':first').not(':last').remove();
+        var html = '';
+        for(var i = 0; i < data.d.length; i++)
+                    html += '<tr><td>' + data.d[i].name + 
+                            '</td><td>' + data.d[i].kasi + '</td></tr>';
+        $('#thetable tr').first().after(html);
+    }
+
+        function Generate() {
+            guid = (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
+             $.ajax({
+<<<<<<< HEAD
+                url: "http://localhost:58038/api/Meals/1",
+=======
+                url: "http://localhost:62447/api/values/1",
+>>>>>>> 292bbe54221c0f9dce632809e59af1a1f07b823a
+                method: "GET",
+                async:false,
+                success: function (result) {
+                    var qrcode  = new QRCode("qrcode");
+                    qrcode.makeCode(result);
+                },
+                failure: function () {
+                    alert("failed");
+                    var qrcode  = new QRCode("qrcode");
+                    qrcode.makeCode("nothing");
+                }
+<<<<<<< HEAD
+            });   
+=======
+            });
+            
+>>>>>>> 292bbe54221c0f9dce632809e59af1a1f07b823a
+        }
+
+    </script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/JquerMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/davidshimjs-qrcodejs-04f46c6/qrcode.min.js"></script>
+    
+
+</body>
+
+</html>
